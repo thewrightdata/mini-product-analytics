@@ -116,6 +116,40 @@ Possible extensions include:
 
 ---
 
+## AI Query Interface
+
+You can ask questions about the product data using natural language.
+
+Example:
+
+How many users signed up but never created a project?
+
+Run:
+
+python ai_query.py
+
+The system will:
+1. Convert the question into SQL
+2. Execute the query against the event data
+3. Return the result
+
+$ python ai_query.py
+
+Question: How many users signed up but never created a project?
+
+Generated SQL:
+
+SELECT COUNT(DISTINCT user_id)
+FROM events
+WHERE user_id NOT IN (
+    SELECT user_id FROM events WHERE event = 'create_project'
+);
+
+Result:
+2
+
+---
+
 ## Product Design Decisions
 
 This project intentionally uses a warehouse-first architecture.
