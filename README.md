@@ -168,10 +168,21 @@ WHERE user_id NOT IN (
 
 ## Example Output
 
-Daily Active Users
+Running analytics queries...
 
-2025-01-01 | 3
-2025-01-02 | 4
+--- daily_active_users.sql ---
+day        daily_active_users
+2025-01-01 3
+2025-01-02 3
+2025-01-03 1
+
+--- funnel.sql ---
+signups created_project invited_teammates
+4       2               1
+
+--- retention.sql ---
+returning_users
+2
 
 ---
 
