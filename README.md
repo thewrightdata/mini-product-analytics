@@ -2,33 +2,74 @@
 
 A lightweight product analytics engine inspired by tools like PostHog.
 
-This project demonstrates how product event data can be transformed into actionable insights using a simple analytics stack.
+This project demonstrates how product event data can be ingested, modeled, and queried to answer common product questions.
 
-## Features
+---
 
-- Event ingestion pipeline
-- SQL-based product analytics
-- Funnel analysis
-- User retention analysis
-- Natural language → SQL queries
+## Problem
+
+Most SaaS products generate large volumes of behavioral event data but lack a simple way to analyze it without a full analytics platform.
+
+This project explores a minimal architecture for turning raw product events into actionable insights.
+
+---
 
 ## Architecture
 
-Events → DuckDB → SQL metrics → AI query layer
+Event data → DuckDB warehouse → SQL analytics layer → AI query interface
 
-## Example Questions
+The goal is to show how a small set of components can support common product analytics workflows.
 
-- How many users signed up this week?
-- How many users created a project after signing up?
-- What percentage of users activate?
+---
 
-## Tech Stack
+## Data Model
 
-- Python
-- DuckDB
-- SQL
-- OpenAI API
+The system operates on a simple event table:
 
-## Why this project exists
+events
 
-Most SaaS products generate massive amounts of event data but struggle to turn it into insights quickly. This project explores a minimal architecture for building a product analytics system from scratch.
+user_id  
+event  
+timestamp  
+
+Each row represents a user performing an action inside a product.
+
+Example events include:
+
+- signup
+- create_project
+- invite_teammate
+- view_dashboard
+
+---
+
+## Example Analytics
+
+The repository includes example SQL queries for:
+
+Daily active users  
+Activation funnels  
+Activation rate
+
+These queries demonstrate how product behavior can be analyzed using a warehouse-first approach.
+
+---
+
+## Example Product Questions
+
+How many users signed up this week?
+
+How many users created a project after signing up?
+
+What percentage of users activate?
+
+---
+
+## Future Improvements
+
+Possible extensions include:
+
+- streaming event ingestion
+- retention cohort analysis
+- session replay integration
+- AI-generated SQL queries
