@@ -10,7 +10,7 @@ This project demonstrates how product event data can be ingested, modeled, and q
 
 Clone the repo:
 
-git clone https://github.com/yourusername/ai-product-analytics-engine
+git clone https://github.com/thewrightdata/ai-product-analytics-engine
 cd ai-product-analytics-engine
 
 Install dependencies:
