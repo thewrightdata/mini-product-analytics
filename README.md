@@ -14,6 +14,25 @@ This project explores a minimal architecture for turning raw product events into
 
 ---
 
+## Running the project
+
+1. Install dependencies
+
+pip install -r requirements.txt
+
+2. Run the analytics pipeline
+
+python run_queries.py
+
+This will load the event dataset into DuckDB and execute the example analytics queries.
+
+The output includes:
+- Daily active users
+- Activation funnel
+- Activation rate
+
+---
+
 ## Architecture
 
 Event data → DuckDB warehouse → SQL analytics layer → AI query interface
@@ -71,6 +90,8 @@ Possible extensions include:
 
 - streaming event ingestion
 - retention cohort analysis
+
+---
 
 - ## System Architecture
 
