@@ -6,6 +6,27 @@ This project demonstrates how product event data can be ingested, modeled, and q
 
 ---
 
+## Quick Start
+
+Clone the repo:
+
+git clone https://github.com/yourusername/ai-product-analytics-engine
+cd ai-product-analytics-engine
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run analytics:
+
+python run_queries.py
+
+(Optional) Ask natural language questions:
+
+python ai_query.py
+
+---
+
 ## Problem
 
 Most SaaS products generate large volumes of behavioral event data but lack a simple way to analyze it without a full analytics platform.
